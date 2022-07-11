@@ -1,8 +1,10 @@
+import React from 'react';
 
-function Header(){
+export default function Header(){
     return (
         <div>
             <h1>Emeka's Expense Tracker</h1>
         </div>
     )
 }
+
