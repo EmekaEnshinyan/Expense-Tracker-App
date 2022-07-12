@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function ExpeenseBtn() {
+export default function ExpenseBtn() {
   return (
     <>
-      <button id="add-expense">Add Expense</button>
+      <button>Button</button>
     </>
   );
 }

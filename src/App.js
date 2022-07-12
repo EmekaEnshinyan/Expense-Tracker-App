@@ -1,30 +1,32 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
-import ExpenseInput from "./components/ExpenseInput";
 import ExpenseBtn from "./components/ExpenseBtn";
-import ExpenseOutput from "./components/ExpenseOutput";
 import Proxy from "./components/Proxy";
 
 class App extends Component {
   render() {
-    const btn = [{ one: "one", two: "two" }];
+    const characters = [
+      {
+        name: "Charlie",
+        job: "Janitor",
+      },
+      {
+        name: "Mac",
+        job: "Bouncer",
+      },
+      {
+        name: "Dee",
+        job: "Aspring actress",
+      },
+      {
+        name: "Dennis",
+        job: "Bartender",
+      },
+    ];
     return (
-      <div className="App">
-        <Header />
-        <div>
-          <br />
-          <ExpenseInput />
-        </div>
-        <br />
+      <div className="container">
+        <Proxy characterData={characters} />
         <div>
           <ExpenseBtn />
-        </div>
-        <div>
-          <ExpenseOutput />
-        </div>
-        <hr />
-        <div className="proxy-container">
-          <Proxy characterData={btn} />
         </div>
       </div>
     );

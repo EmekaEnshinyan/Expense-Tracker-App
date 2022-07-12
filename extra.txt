@@ -1,0 +1,18 @@
+   <div className="App">
+        <Header />
+        <div>
+          <br />
+          <ExpenseInput />
+        </div>
+        <br />
+        <div>
+          <ExpenseBtn />
+        </div>
+        <div>
+          <ExpenseOutput />
+        </div>
+        <hr />
+        <div className="proxy-container">
+          <Proxy />
+        </div>
+      </div>
