@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export default function Header(){
-    return (
-        <h1>Emeka's Expense Tracker App</h1>
-    )
+export default function Header() {
+  return <h1>Emeka's Expense Tracker App</h1>;
 }

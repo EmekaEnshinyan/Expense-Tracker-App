@@ -1,28 +1,34 @@
-import React from "react"
-import Header from "./components/Header"
-import Calendar from "./components/Calendar"
-import Payment from "./components/Payment"
-import Amount from "./components/Amount"
+import React, { Component } from "react";
+import Header from "./components/Header";
+import ExpenseInput from "./components/ExpenseInput";
+import ExpenseBtn from "./components/ExpenseBtn";
+import ExpenseOutput from "./components/ExpenseOutput";
+import Proxy from "./components/Proxy";
 
-
-
-export default function App() {
+class App extends Component {
+  render() {
+    const btn = [{ one: "one", two: "two" }];
     return (
-        <div className="container">
-            <Header />
-            <div>
-                <br />
-                <Calendar />
-            </div>
-            <div>
-            <br />
-                <Payment />
-                </div>
-            <div>
-                <br />
-                <Amount />
-            </div>
-
+      <div className="App">
+        <Header />
+        <div>
+          <br />
+          <ExpenseInput />
         </div>
-    )
+        <br />
+        <div>
+          <ExpenseBtn />
+        </div>
+        <div>
+          <ExpenseOutput />
+        </div>
+        <hr />
+        <div className="proxy-container">
+          <Proxy characterData={btn} />
+        </div>
+      </div>
+    );
+  }
 }
+
+export default App;
