@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const BtnHeader = () => {
   return (
@@ -6,11 +6,12 @@ const BtnHeader = () => {
       <tr>
         <th>Name</th>
         <th>Job</th>
+        <th></th>
       </tr>
     </thead>
   );
 };
-//BEWARE: props is a one-way data flow. Thus, if we wanted to delete a row from the array, we wouldn't be able to
+//BEWARE: props is a one-way data flow. Thus, if we wanted to delete a row from the array,
 const BtnBody = (props) => {
   //dictates HOW the data is going to be passed
   const rows = props.characterData.map((row, index) => {
@@ -18,6 +19,11 @@ const BtnBody = (props) => {
       <tr key={index}>
         <td>{row.name}</td>
         <td>{row.job}</td>
+        <td>
+          <button onClick={() => props.removeCharacter(index)}>
+            Delete Character
+          </button>
+        </td>
       </tr>
     );
   });
@@ -25,17 +31,17 @@ const BtnBody = (props) => {
   return <tbody>{rows}</tbody>;
 };
 
-class Proxy extends Component {
-  render() {
-    //this passes in data to the browser and comprises the virtual DOM
-    const { characterData } = this.props;
-    return (
-      <table>
-        <BtnHeader />
-        <BtnBody characterData={characterData} />
-      </table>
-    );
-  }
-}
+const Proxy = (props) => {
+  const { characterData, removeCharacter } = props;
 
+  return (
+    <table>
+      <BtnHeader />
+      <BtnBody
+        characterData={characterData}
+        removeCharacter={removeCharacter}
+      />
+    </table>
+  );
+};
 export default Proxy;

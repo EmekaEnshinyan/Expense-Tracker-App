@@ -1,33 +1,34 @@
 import React, { Component } from "react";
-import ExpenseBtn from "./components/ExpenseBtn";
 import Proxy from "./components/Proxy";
 
+/*fields for data:
+1. date
+2. payment type
+3. expense description
+4. amount
+*/
+
 class App extends Component {
+  state = {
+    characters: [],
+  };
+  removeCharacter = (index) => {
+    const { characters } = this.state;
+
+    this.setState({
+      characters: characters.filter((character, i) => {
+        return i !== index;
+      }),
+    });
+  };
   render() {
-    const characters = [
-      {
-        name: "Charlie",
-        job: "Janitor",
-      },
-      {
-        name: "Mac",
-        job: "Bouncer",
-      },
-      {
-        name: "Dee",
-        job: "Aspring actress",
-      },
-      {
-        name: "Dennis",
-        job: "Bartender",
-      },
-    ];
+    const { characters } = this.state;
     return (
       <div className="container">
-        <Proxy characterData={characters} />
-        <div>
-          <ExpenseBtn />
-        </div>
+        <Proxy
+          characterData={characters}
+          removeCharacter={this.removeCharacter}
+        />
       </div>
     );
   }
