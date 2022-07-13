@@ -4,9 +4,10 @@ const BtnHeader = () => {
   return (
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th></th>
+        <th>Date</th>
+        <th>Payment</th>
+        <th>Description</th>
+        <th>Amount</th>
       </tr>
     </thead>
   );
@@ -17,8 +18,10 @@ const BtnBody = (props) => {
   const rows = props.characterData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.name}</td>
-        <td>{row.job}</td>
+        <td>{row.Date}</td>
+        <td>{row.Payment}</td>
+        <td>{row.Description}</td>
+        <td>{row.Amount}</td>
         <td>
           <button onClick={() => props.removeCharacter(index)}>
             Delete Character

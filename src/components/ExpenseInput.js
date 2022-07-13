@@ -1,35 +1,48 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function ExpenseInput() {
-  return (
-    <form>
-      <span>Date: </span>
-      <input type="date" name="date" className="date" id="date"></input>
-      <span>Payment Type: </span>
-      <select name="payment-type">
-        <option value="card" id="payment">
-          Debit
-        </option>
-        <option value="credit" id="payment">
-          Credit
-        </option>
-        <option value="cash" id="payment">
-          Cash
-        </option>
-        <option value="check" id="payment">
-          Check
-        </option>
-        <option value="other" id="payment">
-          Other (crypto, barter, etc.)
-        </option>
-      </select>
-      <span>Amount (USD):</span>{" "}
-      <input
-        type="text"
-        name="Amount"
-        id="amount"
-        placeholder="Enter Dollar Amount"
-      ></input>
-    </form>
-  );
+class ExpenseInput extends Component() {
+  render() {
+    const { date, payment } = this.state;
+    return (
+      <form>
+        <label htmlFor="name">Date</label>
+        <input
+          type="text"
+          name="date"
+          id="date"
+          value={date}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="job">Payment</label>
+        <input
+          type="text"
+          name="payment"
+          id="payment"
+          value={payment}
+          onChange={this.handleChange}
+        />
+      </form>
+    );
+  }
 }
+
+class Form extends Comment {
+  initialState = {
+    date: "",
+    payment: "",
+    description: "",
+    amount: "",
+  };
+
+  state = this.initialState;
+}
+
+handleChange = (event) => {
+  const { date, value } = event.target;
+
+  this.setState({
+    [date]: value,
+  });
+};
+
+export default ExpenseInput;
