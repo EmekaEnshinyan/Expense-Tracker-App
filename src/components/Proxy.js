@@ -5,9 +5,12 @@ import React from "react";
 export default function Proxy(props) {
   return (
     <div className="proxy-container">
-      <h1>{props.date}</h1>
-      <h2>{props.payment}</h2>
-      <h3>{props.description}</h3>
+      <table>
+        <td>{props.date}</td>
+        <td>{props.payment}</td>
+        <td>{props.description}</td>
+        <td>{props.amount}</td>
+      </table>
     </div>
   );
 }
