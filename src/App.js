@@ -1,7 +1,6 @@
 import React from "react";
 import Proxy from "./components/Proxy";
 import ExpenseBtn from "./components/ExpenseBtn";
-import data from "./data";
 /*fields for data:
 1. date
 2. payment type
@@ -9,23 +8,18 @@ import data from "./data";
 4. amount
 */
 
+//it is here where you can hardcode the data
 export default function App() {
-  const item = data.map((item) => {
-    return (
+  return (
+    <div>
+      <h1>Emeka's Expense Tracker</h1>
       <div>
-        <div>
-          <Proxy
-            date={item.date}
-            payment={item.payment}
-            description={item.description}
-            amount={item.amount}
-          />
-        </div>
-        <div>
-          <ExpenseBtn />
-        </div>
+        <Proxy date="7/13/22" payment="debit" description="tea" amount="15" />
       </div>
-    );
-  });
-  //const proxyObj = [{ date: "1/1/1", payment: "debit", description: "tea" }];
+      <div>
+        <hr />
+        <ExpenseBtn />
+      </div>
+    </div>
+  );
 }
