@@ -16,3 +16,18 @@
           <Proxy />
         </div>
       </div>
+
+      return (
+    <div className="proxy-container">
+      <table>
+        <td>Date</td>
+        <span>{props.date}</span>
+        <td>Payment</td>
+        <span>{props.payment}</span>
+        <td>Description</td>
+        <span>{props.description}</span>
+        <td>Amount</td>
+        <span>{props.amount}</span>
+      </table>
+    </div>
+  );

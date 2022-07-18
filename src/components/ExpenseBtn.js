@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function ExpenseBtn({ date, payment, description }) {
+const ExpenseBtn = () => {
+  const counter = 10;
   return (
-    <>
-      <button>Add Expense</button>
-    </>
+    <div>
+      <button>5</button>
+      <div>{counter}</div>
+    </div>
   );
-}
+};
+
+export default ExpenseBtn;
