@@ -4,20 +4,6 @@ import React from "react";
 import data from "../data";
 //object destructuring version
 
-export default function Proxy({ date, payment, description, amount }) {
-  const tableElements = data.map((item) => {
-    return (
-      <Proxy
-        date={item.date}
-        payment={item.payment}
-        description={item.description}
-        amount={item.amount}
-      />
-    );
-  });
-  return (
-    <div className="proxy-container">
-      <table>{tableElements}</table>
-    </div>
-  );
+export default function Proxy() {
+  return <div></div>;
 }
