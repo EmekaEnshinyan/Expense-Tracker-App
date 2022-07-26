@@ -14,16 +14,16 @@ const months = [
   "December",
 ];
 
-const ExepnseBtn = () => {
+const ExepnseBtn = (props) => {
   //hook for button click
   const [data, addExpense] = useState(0);
   const handleClick = () => {
-    addExpense(data);
+    addExpense(data + props.incrementBy);
   };
 
   return (
     <div>
-      <button onClick={handleClick}>+5</button>
+      <button onClick={handleClick}>+{props.incrementBy}</button>
       <div>{data}</div>
     </div>
   );

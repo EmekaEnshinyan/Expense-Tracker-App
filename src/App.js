@@ -1,5 +1,6 @@
 import React from "react";
 import ExepnseBtn from "./components/ExpenseBtn";
+import AddList from "./components/AddList";
 
 /*fields for data:
 1. date
@@ -9,7 +10,11 @@ import ExepnseBtn from "./components/ExpenseBtn";
 */
 //app.js is the wrapper where all jsx is put in
 //it is here where you can hardcode the data
-export default function App() {
+const [items, setItems] = useState([
+  { date: "7/23/22", payment: "tea", amount: 50, isPaid: true },
+]);
+
+const App = () => {
   return (
     <div>
       <div>
@@ -32,8 +37,35 @@ export default function App() {
         </form>
       </div>
       <div>
-        <ExepnseBtn />
+        <ExepnseBtn incrementBy={5} />
+        <ExepnseBtn incrementBy={10} />
+      </div>
+      <div className="item-list">
+        {items.map((item, index) => (
+          <div className="item-container">
+            <div className="item-name">
+              {item.isPaid ? (
+                <>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                  <span className="completed">{item.itemName}</span>
+                </>
+              ) : (
+                <>
+                  Item
+                  <span>{item.itemName}</span>
+                </>
+              )}
+            </div>
+            <div className="quantity">
+              <button>Button 1</button>
+              <span> {item.quantity} </span>
+              <button>Button 2</button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default App;
