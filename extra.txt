@@ -31,3 +31,34 @@
       </table>
     </div>
   );
+
+
+  //Proxy component
+  //NOTE: App.js contains the data for some component and the component passes the data through whatever placeholder coded in the comp. ex: props
+
+import React from "react";
+import data from "../data";
+//object destructuring version
+
+export default function Proxy() {
+  return <div></div>;
+}
+
+//ExpenseBtn component
+import React, { useState } from "react";
+
+const ExpenseBtn = () => {
+  //hook
+  const [changeNum, setNum] = (useState = 0);
+
+  const handleClick = () => {
+    setNum(changeNum + 5);
+    return (
+      <div>
+        <button onClick={handleClick}>+5</button>
+        <div>{changeNum}</div>
+      </div>
+    );
+  };
+};
+export default ExpenseBtn;

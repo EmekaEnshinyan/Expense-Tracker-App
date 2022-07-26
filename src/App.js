@@ -1,5 +1,5 @@
 import React from "react";
-import ExpenseBtn from "./components/ExpenseBtn";
+import ExepnseBtn from "./components/ExpenseBtn";
 
 /*fields for data:
 1. date
@@ -12,10 +12,27 @@ import ExpenseBtn from "./components/ExpenseBtn";
 export default function App() {
   return (
     <div>
-      <h1>Emeka's Expense Tracker</h1>
       <div>
-        <hr />
-        <ExpenseBtn />
+        <h1>Emeka's Expense Tracker</h1>
+      </div>
+      <div>
+        <form method="post">
+          Date: <input type="date" />
+          <br />
+          Payment Type:
+          <select>
+            <option selected="selected" value="debit">
+              debit
+            </option>
+            <option selected="selected" value="cash">
+              cash
+            </option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div>
+        <ExepnseBtn />
       </div>
     </div>
   );
