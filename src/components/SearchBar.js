@@ -13,10 +13,14 @@ const SearchBar = () => {
   const handleClearButton = () => {
     setSearchValue(shouldDisplayButton);
   };
-  const shouldDisplayButton = searchValue.length > 0;
+  const shouldDisplayButton = "";
 
   const showExpense = expense.map((e) => {
-    return <span>{e} </span>;
+    return <span key={e}>{e} </span>;
+  });
+  //when making a list with .map(), make sure to include a key property to tag
+  const showExpenseAsList = expense.map((e) => {
+    return <li key={e}>{e} </li>;
   });
   return (
     <div>
@@ -27,6 +31,8 @@ const SearchBar = () => {
       )}
       <br />
       {showExpense}
+      <br />
+      <ul>{showExpenseAsList}</ul>
     </div>
   );
 };

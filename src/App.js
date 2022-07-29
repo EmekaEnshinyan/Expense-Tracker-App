@@ -10,7 +10,24 @@ import SearchBar from "./components/SearchBar";
 const App = () => {
   return (
     <div>
-      <SearchBar />
+      <h1>Emeka's Expense Tracker</h1>
+      <h2>Add A New Item</h2>
+      <div>
+        <SearchBar />
+      </div>
+      <div id="form-box">
+        <form>
+          <div>
+            <span>Type:</span>
+            <select name="type">
+              <option value="card">Card</option>
+              <option value="cash">Cash</option>
+              <option value="cryptocoin">Cryptocoin</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
