@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import Proxy from "./components/Proxy";
-
+import React from "react";
+import SearchBar from "./components/SearchBar";
 /*fields for data:
 1. date
 2. payment type
@@ -8,30 +7,12 @@ import Proxy from "./components/Proxy";
 4. amount
 */
 
-class App extends Component {
-  state = {
-    characters: [],
-  };
-  removeCharacter = (index) => {
-    const { characters } = this.state;
-
-    this.setState({
-      characters: characters.filter((character, i) => {
-        return i !== index;
-      }),
-    });
-  };
-  render() {
-    const { characters } = this.state;
-    return (
-      <div className="container">
-        <Proxy
-          characterData={characters}
-          removeCharacter={this.removeCharacter}
-        />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
+};
 
 export default App;

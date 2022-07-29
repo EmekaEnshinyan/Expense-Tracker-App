@@ -1,0 +1,25 @@
+rendering of components - when displays itself in the browser
+
+Component Tree - there is an uppermost entry comp (App.js) which will be the parent comp of other child comp (SearchBar.js)
+
+Components - a js funct or a class object that lays out the blueprint for how data is going to be rendered in browser.
+
+Props - used to pass information down the component tree
+
+stateful logic - 
+    |
+    states - private and fully controlled by component
+            
+
+#
+hooks are re-writable
+#
+hooks are backwards compatible
+#
+hooks are called inside funct
+    |
+    this adds some local state to the hook
+
+--TIPS--
+
+- if a var does not need anything within comp body, then define outside comp to avoid redefininig every called
