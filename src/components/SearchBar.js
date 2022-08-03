@@ -13,7 +13,7 @@ const SearchBar = () => {
   const handleClearButton = () => {
     setSearchValue(shouldDisplayButton);
   };
-  const shouldDisplayButton = "";
+  const shouldDisplayButton = searchValue.length > 0;
 
   const showExpense = expense.map((e) => {
     return <span key={e}>{e} </span>;

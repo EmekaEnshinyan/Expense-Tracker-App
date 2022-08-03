@@ -20,6 +20,22 @@ hooks are called inside funct
     |
     this adds some local state to the hook
 
+useeffect Hook 
+    |
+    the word "effect" refers to "side effect"
+    |    |
+    |    Side Effect - a modification of data in code that's governed by the code's logic
+    |
+    useeffect also relies on "pure functions"
+        |
+        pure functions are deterministic I/O events in which the output never changes
+
 --TIPS--
 
 - if a var does not need anything within comp body, then define outside comp to avoid redefininig every called
+
+--Confguring the Expense Button--
+
+1. create another useState hook that takes empty array
+2. make new state onClick for the Button
+3. have it call the useeffect hook
