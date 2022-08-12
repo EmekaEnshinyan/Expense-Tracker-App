@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const AddExpense = () => {
-  const [expenses, setExpenses] = useState(0);
+  const [expenses, setExpenses] = useState([]);
   const [addData, setAddData] = useState({
     type: "",
     text: "",
@@ -23,21 +23,42 @@ const AddExpense = () => {
 
   const handleClickSubmit = (event) => {
     event.preventDefault();
-
     const newExpense = {
-      type: addData.type,
-      text: addData.text,
-      date: addData.date,
-      number: addData.number,
+      type: "",
+      text: "",
+      date: "",
+      number: "",
     };
-    const newExpenses = [expenses, newExpense];
+    setExpenses([...expenses, newExpense]);
   };
+
+  const btnSubmit = (event) => {
+    event.preventDefault();
+
+    const newExpense = event.addData.map((row, index) => {
+      return (
+        <tr key={index}>
+          <td>{row.type}</td>
+          <td>{row.text}</td>
+          <td>{row.date}</td>
+          <td>{row.number}</td>
+        </tr>
+      );
+    });
+  };
+  // const newExpense = {
+  //   type: addData.type,
+  //   text: addData.text,
+  //   date: addData.date,
+  //   number: addData.number,
+  // };
+
   return (
     <div>
       <h1>Emeka's Expense Tracker</h1>
       <h2>Add A New Item</h2>
       <div id="form-container">
-        <form>
+        <form onSubmit={handleClickSubmit}>
           <div>
             <span>Type:</span>
             <select name="type" onChange={handleClick}>
@@ -77,7 +98,6 @@ const AddExpense = () => {
               onChange={handleClick}
             ></input>
           </div>
-
           <table className="table">
             <thead>
               <tr>
