@@ -46,13 +46,6 @@ const AddExpense = () => {
       );
     });
   };
-  // const newExpense = {
-  //   type: addData.type,
-  //   text: addData.text,
-  //   date: addData.date,
-  //   number: addData.number,
-  // };
-
   return (
     <div>
       <h1>Emeka's Expense Tracker</h1>
