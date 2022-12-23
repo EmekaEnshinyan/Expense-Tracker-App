@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import "./styles.css";
 import AddExpense from "./components/AddExpense";
+import AddExpense2 from "./components/AddExpense2";
 /*fields for data:
 1. date
 2. payment type
@@ -10,7 +12,10 @@ import AddExpense from "./components/AddExpense";
 const App = () => {
   return (
     <div>
-      <AddExpense />
+      <div>
+        <AddExpense />
+      </div>
+      Testing
     </div>
   );
 };

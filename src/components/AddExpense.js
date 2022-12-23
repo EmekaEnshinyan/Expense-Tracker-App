@@ -21,16 +21,11 @@ const AddExpense = () => {
     setAddData(newFormData);
   };
 
-  const handleClickSubmit = (event) => {
-    event.preventDefault();
-    const newExpense = {
-      type: "",
-      text: "",
-      date: "",
-      number: "",
-    };
-    setExpenses([...expenses, newExpense]);
-  };
+  function handleChange(event) {
+    setExpenses((state) => {
+      return { ...state, [event.target.name]: event.target.value };
+    });
+  }
 
   const btnSubmit = (event) => {
     event.preventDefault();
@@ -51,7 +46,7 @@ const AddExpense = () => {
       <h1>Emeka's Expense Tracker</h1>
       <h2>Add A New Item</h2>
       <div id="form-container">
-        <form onSubmit={handleClickSubmit}>
+        <form>
           <div>
             <span>Type:</span>
             <select name="type" onChange={handleClick}>
@@ -101,11 +96,7 @@ const AddExpense = () => {
               </tr>
             </thead>
           </table>
-          <input
-            type="submit"
-            value="Add Expense"
-            onSubmit={handleClickSubmit}
-          ></input>
+          <input type="submit" value="Add Expense"></input>
         </form>
       </div>
     </div>
