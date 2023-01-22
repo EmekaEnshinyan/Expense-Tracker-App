@@ -1,23 +1,42 @@
-import React, { useState } from "react";
-import "./styles.css";
-import AddExpense from "./components/AddExpense";
-import AddExpense2 from "./components/AddExpense2";
-/*fields for data:
-1. date
-2. payment type
-3. expense description
-4. amount
-*/
+import "./App.css";
+import React from "react";
+import {
+  ArrayMethodsTasks,
+  ClassesBots,
+  DestructuringBots,
+  Tracker,
+  Props,
+  Hooks,
+  UpdateHook,
+} from "./Components/index";
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <div className="App">
+      TEST
       <div>
-        <AddExpense />
+        <ArrayMethodsTasks />
       </div>
-      Testing
+      <div>
+        <Tracker />
+      </div>
+      <div>
+        <ClassesBots />
+      </div>
+      <div>
+        <DestructuringBots />
+      </div>
+      <div>
+        <Props />
+      </div>
+      <div>
+        <Hooks />
+      </div>
+      <div>
+        <UpdateHook />
+      </div>
     </div>
   );
-};
+}
 
 export default App;
