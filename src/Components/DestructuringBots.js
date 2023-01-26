@@ -1,14 +1,10 @@
-const dBots = ["1", "2", "3"];
-const [cleaner, driver, cooker] = dBots;
+import React from "react";
 
 const cleanTasks = {
   one: "floor",
   two: "kitchen",
   three: "windows",
 };
-function doTask(one, two, three) {
-  return "First clean " + one + ", then " + two + ", then " + three;
-}
 
 const DestructuringBots = ({ one, two, three }) => {
   return (
